@@ -3,7 +3,7 @@ import { bytes, range, type ByteArray, type Bytes, type RGB } from './utils';
 
 const MAGIC: ByteArray = Buffer.from('&015$2#8)@_!(D^."', 'ascii') as unknown as Uint8Array;
 
-export const ruifan_encode = (wave_data: ByteArray, defaultNonce: number = 128) => {
+export const ruifan_encode = (wave_data: ByteArray, defaultNonce?: number) => {
   let nonce = defaultNonce;
   if (!nonce) nonce = Math.round(Math.random() * 255);
   range(1, 12).forEach((i) => {
