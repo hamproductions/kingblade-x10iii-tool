@@ -5,7 +5,7 @@ import { Button } from '~/components/ui/button';
 import { Dialog } from '~/components/ui/dialog';
 import { IconButton } from '~/components/ui/icon-button';
 
-const createConfirmDialog = (key: 'mid_sort_confirm' | 'ended_confirm') => {
+const createConfirmDialog = (key: 'reset_default') => {
   return function ConfirmDialog(props: Dialog.RootProps & { onConfirm: () => void }) {
     const { onConfirm, ...rest } = props;
     const { t } = useTranslation();
@@ -42,5 +42,4 @@ const createConfirmDialog = (key: 'mid_sort_confirm' | 'ended_confirm') => {
   };
 };
 
-export const ConfirmMidSortDialog = createConfirmDialog('mid_sort_confirm');
-export const ConfirmEndedDialog = createConfirmDialog('ended_confirm');
+export const ConfirmResetDefaultDialog = createConfirmDialog('reset_default');
