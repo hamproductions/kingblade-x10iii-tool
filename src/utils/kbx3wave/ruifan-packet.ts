@@ -5,7 +5,7 @@ const MAGIC: ByteArray = Buffer.from('&015$2#8)@_!(D^."', 'ascii') as unknown as
 
 export const ruifan_encode = (wave_data: ByteArray, defaultNonce?: number) => {
   let nonce = defaultNonce;
-  if (!nonce) nonce = Math.random() * 256;
+  if (!nonce) nonce = Math.round(Math.random() * 255);
   range(1, 12).forEach((i) => {
     wave_data[i] = wave_data[i] ^ nonce ^ MAGIC[i - 1 + (nonce % 5)];
   });

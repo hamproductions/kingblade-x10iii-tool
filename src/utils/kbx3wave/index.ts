@@ -12,7 +12,7 @@ import {
 import { write_pause, write_preamble, write_packet } from './irdawave';
 
 const color_normalization = (rgb_tuple: RGB): RGB => {
-  const [r, g, b] = rgb_tuple;
+  // const [r, g, b] = rgb_tuple;
   const color_sum = sum(rgb_tuple);
   if (color_sum > 255) return rgb_tuple.map((x) => round((x / color_sum) * 255)) as RGB;
   return rgb_tuple;
@@ -23,7 +23,7 @@ const colors_to_packets = (colors: ByteArray[], no_normalization = false, previe
   colors.map((color_set, n) => {
     let rgb = [color_set[0], color_set[1], color_set[2]] as RGB;
     const w = color_set[3];
-    const y = color_set[4];
+    // const y = color_set[4];
     if (!no_normalization) rgb = color_normalization(rgb);
     packets.push(preview ? ruifan_preview_packet(rgb, w) : ruifan_memory_packet(n, rgb, w));
   });
