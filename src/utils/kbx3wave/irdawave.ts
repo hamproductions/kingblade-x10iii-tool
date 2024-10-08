@@ -14,7 +14,7 @@ function _write_bit(wf: WaveWrite, b: boolean, invert = false) {
     wf.writeframesraw(invert ? FRAME_HIGH_16BIT : FRAME_LOW_16BIT);
   });
   range(6).forEach(() => {
-    wf.writeframesraw(b ^ invert ? FRAME_LOW_16BIT : FRAME_HIGH_16BIT);
+    wf.writeframesraw(b !== invert ? FRAME_LOW_16BIT : FRAME_HIGH_16BIT);
   });
   range(6).forEach(() => {
     wf.writeframesraw(invert ? FRAME_HIGH_16BIT : FRAME_LOW_16BIT);

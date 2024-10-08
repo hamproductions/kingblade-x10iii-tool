@@ -4,7 +4,7 @@ import { clientOnly } from 'vike-react/clientOnly';
 import { useState } from 'react';
 import { FaXmark } from 'react-icons/fa6';
 import { Scanner } from '@yudiel/react-qr-scanner';
-import { useToaster } from '../../context/ToasterContext';
+// import { useToaster } from '../../context/ToasterContext';
 
 import { Box, Center, HStack, Stack } from 'styled-system/jsx';
 import { Metadata } from '~/components/layout/Metadata';
@@ -22,7 +22,7 @@ const AudioCodePlayer = clientOnly(() =>
 );
 
 export function Page() {
-  const { toast } = useToaster();
+  // const { toast } = useToaster();
   const { t } = useTranslation();
   const [colors, setColors] = useLocalStorage<string[]>('current-colors', [
     'ff00000000',
