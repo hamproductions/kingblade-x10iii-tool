@@ -23,7 +23,13 @@ export default defineConfig({
       dest: join(__dirname, 'dist', 'client', '~partytown')
     }),
     cjsInterop({
-      dependencies: ['path-browserify', 'lz-string', 'react-helmet-async', 'wavefile']
+      dependencies: [
+        'path-browserify',
+        'lz-string',
+        'react-helmet-async',
+        'wavefile',
+        'react-qr-scanner'
+      ]
     }),
     react({
       babel: {
