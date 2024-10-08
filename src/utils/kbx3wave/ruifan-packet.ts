@@ -3,7 +3,7 @@ import { bytes, range, type ByteArray, type Bytes, type RGB } from './utils';
 
 const MAGIC: ByteArray = Buffer.from('&015$2#8)@_!(D^."', 'ascii') as unknown as Uint8Array;
 
-export const ruifan_encode = (wave_data: ByteArray, defaultNonce?: number) => {
+export const ruifan_encode = (wave_data: ByteArray, defaultNonce: number = 128) => {
   let nonce = defaultNonce;
   if (!nonce) nonce = Math.round(Math.random() * 255);
   range(1, 12).forEach((i) => {
@@ -11,16 +11,12 @@ export const ruifan_encode = (wave_data: ByteArray, defaultNonce?: number) => {
   });
   wave_data[12] = MAGIC[wave_data[1] & 0xf] ^ nonce;
   const swap_addr = (wave_data[1] % 10) + 2;
-  const tmp = wave_data[12];
-  wave_data[12] = wave_data[swap_addr];
-  wave_data[swap_addr] = tmp;
+  [wave_data[swap_addr], wave_data[12]] = [wave_data[12], wave_data[swap_addr]];
 };
 
 export const ruifan_decode = (wave_data: ByteArray) => {
   const swap_addr = (wave_data[1] % 10) + 2;
-  const tmp = wave_data[12];
-  wave_data[12] = wave_data[swap_addr];
-  wave_data[swap_addr] = tmp;
+  [wave_data[swap_addr], wave_data[12]] = [wave_data[12], wave_data[swap_addr]];
   const nonce = wave_data[12] ^ MAGIC[wave_data[1] & 0xf];
   range(1, 12).forEach((i) => (wave_data[i] = wave_data[i] ^ nonce ^ MAGIC[i - 1 + (nonce % 5)]));
 };

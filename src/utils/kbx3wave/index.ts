@@ -65,7 +65,6 @@ export const generate_wave = (packets: ByteArray[], invert = false) => {
   return res.toBuffer();
 };
 
-export const generateAudioFile = (colors: string[]) => {
-  console.log(colors);
-  return generate_wave(colors_to_packets(colors.map((c) => fromHexString(c))));
+export const generateAudioFile = (colors: string[], invert = false) => {
+  return generate_wave(colors_to_packets(colors.map((c) => fromHexString(c))), invert);
 };

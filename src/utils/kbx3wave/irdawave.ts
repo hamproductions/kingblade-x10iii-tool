@@ -14,7 +14,7 @@ function _write_bit(wf: WaveWrite, b: boolean, invert = false) {
     wf.writeframesraw(invert ? FRAME_HIGH_16BIT : FRAME_LOW_16BIT);
   });
   range(6).forEach(() => {
-    wf.writeframesraw(b !== invert ? FRAME_LOW_16BIT : FRAME_HIGH_16BIT);
+    wf.writeframesraw(b ^ invert ? FRAME_LOW_16BIT : FRAME_HIGH_16BIT);
   });
   range(6).forEach(() => {
     wf.writeframesraw(invert ? FRAME_HIGH_16BIT : FRAME_LOW_16BIT);
@@ -30,10 +30,6 @@ export function write_packet(wf: WaveWrite, packet: ByteArray, invert = false) {
     _write_bit(wf, true, invert);
   });
 }
-
-// def write_preamble(wf: wave.Wave_write, invert=False):
-//     for _ in range(9600):
-//         wf.writeframesraw(FRAME_HIGH_16BIT if invert else FRAME_LOW_16BIT)
 
 export function write_preamble(wf: WaveWrite, invert = false) {
   // 200ms preamble

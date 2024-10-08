@@ -43,6 +43,21 @@ export function Page() {
   ]);
   const [showQRScanner, setShowQRScanner] = useState(false);
 
+  const handleQRCodeScanned = (data: string) => {
+    console.log(data);
+    if (!data.startsWith('Copyright RUIFAN')) {
+      return;
+    }
+
+    setColors(
+      data
+        .trim()
+        .split('\n')
+        .slice(2)
+        .map((c) => c.trim().toLowerCase())
+    );
+    setShowQRScanner(false);
+  };
   return (
     <>
       <Metadata title={t('title')} helmet />
@@ -107,7 +122,7 @@ export function Page() {
                           '& svg': { maxWidth: 'full', maxHeight: 'full' }
                         })
                       }}
-                      onScan={(results) => console.log(results)}
+                      onScan={(results) => handleQRCodeScanned(results[0].rawValue)}
                     />
                   )}
                 </Box>
