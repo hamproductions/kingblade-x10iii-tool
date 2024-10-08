@@ -1,5 +1,5 @@
 import { Buffer } from 'buffer';
-import { round, sum } from 'lodash-es';
+import { range, round, sum } from 'lodash-es';
 import { WaveFile } from 'wavefile';
 import { fromHexString, type ByteArray, type RGB } from './utils';
 import {
@@ -51,7 +51,9 @@ export const generate_wave = (packets: ByteArray[], invert = false) => {
     }
   };
 
-  write_pause(wf);
+  range(10).forEach(() => {
+    write_pause(wf);
+  });
   write_preamble(wf, invert);
 
   packets.map((packet) => {
