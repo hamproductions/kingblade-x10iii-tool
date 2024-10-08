@@ -1,3 +1,5 @@
+import { Buffer } from 'buffer';
+
 export type ByteArray = Uint8Array;
 export type Bytes = Uint8Array;
 export type RGB = [r: number, g: number, b: number];

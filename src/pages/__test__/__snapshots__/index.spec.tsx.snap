@@ -342,7 +342,7 @@ exports[`Home page > renders 1`] = `
         </p>
         <a
           class="link"
-          href="https://github.com/hamproductions/shirt-maker"
+          href="https://github.com/hamproductions/kingblade-x10iii-tool"
           target="_blank"
         >
           GitHub

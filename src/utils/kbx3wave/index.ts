@@ -1,3 +1,4 @@
+import { Buffer } from 'buffer';
 import { round, sum } from 'lodash-es';
 import { WaveFile } from 'wavefile';
 import { fromHexString, type ByteArray, type RGB } from './utils';
@@ -35,7 +36,7 @@ const colors_to_packets = (colors: ByteArray[], no_normalization = false, previe
   return packets;
 };
 
-const generate_wave = async (packets: ByteArray[], invert = false) => {
+export const generate_wave = (packets: ByteArray[], invert = false) => {
   const samples: number[][] = [[], []];
 
   const wf = {
@@ -61,31 +62,10 @@ const generate_wave = async (packets: ByteArray[], invert = false) => {
 
   const res = new WaveFile();
   res.fromScratch(2, 48000, '16', samples);
-  await Bun.write('./out.wav', res.toBuffer());
+  return res.toBuffer();
 };
 
-const main = async () => {
-  const colors = [
-    'ff00000000',
-    '0000ff0000',
-    '000000ff00',
-    'ff23000000',
-    '00ff000000',
-    '1e00ff0000',
-    'ff004b0000',
-    '93b9000000',
-    '00a8140000',
-    '00c6ae0700',
-    'ff2f4d0000',
-    '5000d30000',
-    '57ff000000',
-    '00ff5e0c00',
-    'ff00110000'
-  ].map((color) => {
-    return fromHexString(color);
-  });
-  // console.log(colors);
-  await generate_wave(colors_to_packets(colors));
+export const generateAudioFile = (colors: string[]) => {
+  console.log(colors);
+  return generate_wave(colors_to_packets(colors.map((c) => fromHexString(c))));
 };
-
-await main();
