@@ -75,7 +75,7 @@ export function EditColorDialog(
               <Stack gap="1">
                 <Dialog.Title>{t(`edit_color.title`)}</Dialog.Title>
                 <Dialog.Description>{t(`edit_color.description`)}</Dialog.Description>
-                <Input value={color} onChange={(e) => onColorChange(e.target.value)} />
+                <Input value={color} onChange={(e) => setTmpColor(e.target.value)} />
                 <Box
                   style={{ backgroundColor: colorsToHex(tmpColor) }}
                   aspectRatio="1"
@@ -99,7 +99,7 @@ export function EditColorDialog(
                         { value: 255, label: '255' }
                       ]}
                       onValueChange={({ value }) => {
-                        onColorChange(
+                        setTmpColor(
                           padStart(Number(value[0]).toString(16), 2, '0') + tmpColor.slice(2)
                         );
                       }}
@@ -121,7 +121,7 @@ export function EditColorDialog(
                         { value: 255, label: '255' }
                       ]}
                       onValueChange={({ value }) => {
-                        onColorChange(
+                        setTmpColor(
                           tmpColor.slice(0, 2) +
                             padStart(Number(value[0]).toString(16), 2, '0') +
                             tmpColor.slice(4)

@@ -14,6 +14,7 @@ export function AudioCodePlayer(props: { colors: string[] }) {
   const createAudioFile = debounce(() => {
     const buffer = new Blob([generateAudioFile(colors ?? [], { bitDepth: '16' })]);
     setAudioFile(URL.createObjectURL(buffer));
+
     return buffer;
   }, 100);
 
@@ -28,9 +29,9 @@ export function AudioCodePlayer(props: { colors: string[] }) {
   const playAudio = async () => {
     const player = playerRef.current;
     if (!player) return;
-    console.log('PLAY!!!');
-    player.currentTime = 0;
     player.volume = 0.5;
+    console.log('PLAY!!!', player.volume);
+    player.currentTime = 0;
     await player.play();
   };
 

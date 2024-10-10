@@ -65,10 +65,10 @@ export const generate_wave = (
   });
 
   const res = new WaveFile();
-  const bitRate = new AudioContext().sampleRate;
+  // const bitRate = new AudioContext().sampleRate;
   res.fromScratch(2, 48000, '16', samples);
   res.toBitDepth(bitDepth);
-  res.toSampleRate(bitRate);
+  // res.toSampleRate(48000);
 
   return res.toBuffer();
 };
