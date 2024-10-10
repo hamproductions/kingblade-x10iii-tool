@@ -35,7 +35,7 @@ export function EditColorDialog(
   };
 
   const createAudioFile = debounce(() => {
-    const buffer = new Blob([generateAudioFile([tmpColor], true)]);
+    const buffer = new Blob([generateAudioFile([tmpColor], { preview: true })]);
     setPreviewAudio(URL.createObjectURL(buffer));
     console.log('NEW FILE!');
   }, 100);

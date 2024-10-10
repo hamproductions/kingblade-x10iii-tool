@@ -1,49 +1,34 @@
 {
-  "title": "メンタル障害計算機",
-  "description": "どれだけメンタル崩壊させるかは計算できます",
-  "site_name": "メンタル障害計算機",
-  "save": "パソコンに保存する",
-  "copy": "コピーする",
-  "Download": "ダウンロード",
-  "cancel": "キャンセル",
-  "presets": "デザインを選択する",
-  "customize_text": "テキストを編集する",
-  "preview": "プレビュー",
-  "light_mode": "ダークモードを切り替えると文字の色を変更することができます。",
+  "title": "Kingblade x10iii チューニングツール",
+  "description": "あなたの古いKingblade x10iiiを復旧しましょう。",
+  "set_default_colors": "初期色を設定する",
+  "save_preset": "色を保存する",
+  "scan_qr_code": "QRコード読み取り",
+  "color_settings": "色の設定",
+  "site_name": "Kingbalde x10iiiツール",
+  "dialog": {
+    "close": "閉じる"
+  },
   "footer": {
-    "created_by": "作成：",
-    "footer_text": "デザインは@luseo29さんのもの",
-    "source_code": "ソースコードをチェックしてみてね"
+    "created_by": "作者",
+    "footer_text": "アルゴリズムはkGithubのjy00302さんから",
+    "source_code": "ソースコード"
   },
-  "error_page": {
-    "title": "あっちゃー",
-    "text": "ページを再読み込みすると大体直りましたし、データをクリアして再読み込みするのもたまに治せます。 直さない場合は",
-    "discord_link": "Discordで@hamp",
-    "to_fix_it": "に連絡してください。",
-    "copy": "エラーメッセージをコピー",
-    "reload": "再読み込み",
-    "clear": "データをクリアして際読み込み"
+  "scanner": {
+    "title": "QR読み取り",
+    "description": "Kingbladeアプリコードをスキャンする"
   },
-  "toast": {
-    "generating_screenshot": "画像生成しています…"
+  "install_to_kingblade": "ペンライトにインストールする",
+  "stop": "中止",
+  "red": "赤",
+  "green": "緑",
+  "blue": "青",
+  "white": "白",
+  "preview_color": "色をプレビューする",
+  "edit_color": {
+    "save": "保存",
+    "title": "編集",
+    "description": "色を編集する"
   },
-  "card": {
-    "enabled": "有効化",
-    "name": "カード名",
-    "mood": "得意ムード",
-    "mood-change": "ムード変更値（％）"
-  },
-  "happy": "ハッピー",
-  "neutral": "ニュートラル",
-  "mellow": "メロウ",
-  "cards_settings": "所有カード設定",
-  "delete": "削除",
-  "new_card": "カードを追加する",
-  "current_mental": "現在のメンタル",
-  "current_mood": "ムード値",
-  "max_mental": "メンタル最大値",
-  "target_mental": "目標のメンタル",
-  "settings": "設定",
-  "per_use": "一回につき",
-  "mental": "メンタル"
+  "not_implemented": "未実装"
 }

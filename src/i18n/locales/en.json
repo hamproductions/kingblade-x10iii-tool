@@ -1,31 +1,34 @@
 {
-  "title": "Custom Shirt Maker",
-  "description": "Want your own custom design? Try it here!",
-  "original_link": "@luseo29's design.",
-  "site_name": "Shirt Maker",
-  "save": "Save to PC",
-  "download": "Download",
-  "copy": "Copy to clipboard",
-  "cancel": "Cancel",
-  "presets": "Select Design",
-  "customize_text": "Customize Text",
-  "preview": "Preview",
-  "light_mode": "Switch light/dark mode for black/white text version.",
+  "title": "Kingblade x10iii Tuning Tool",
+  "description": "Tunes your super old Kingblade x10iii with ease",
+  "set_default_colors": "Set default colors",
+  "save_preset": "Save Preset",
+  "scan_qr_code": "Scan QR Code",
+  "color_settings": "Color Settings",
+  "site_name": "Kingbalde x10iii Tool",
+  "dialog": {
+    "close": "Close"
+  },
   "footer": {
     "created_by": "Created by",
-    "footer_text": "Thanks @luseo29 for the template",
-    "source_code": "Check out source code on "
+    "footer_text": "Algorithm from kjy00302 on GitHub",
+    "source_code": "Check out source code on"
   },
-  "error_page": {
-    "title": "Oopsie",
-    "text": "Sometimes refreshing the page fix it, Clearing the data might also fix it too. If it doesn't ping ",
-    "discord_link": "@hamp on Discord",
-    "to_fix_it": " to fix it.",
-    "copy": "Copy Error Message",
-    "reload": "Reload Page",
-    "clear": "Clear Data and Reload Page"
+  "scanner": {
+    "title": "Scanner",
+    "description": "Scan Kingblade Compatible QR Code here"
   },
-  "toast": {
-    "generating_screenshot": "Generating Screenshot"
-  }
+  "install_to_kingblade": "Install to Kingblade",
+  "stop": "Stop",
+  "red": "red",
+  "green": "green",
+  "blue": "blue",
+  "white": "white",
+  "preview_color": "Preview color",
+  "edit_color": {
+    "save": "save",
+    "title": "Edit",
+    "description": "Edit color"
+  },
+  "not_implemented": "Not Implemented"
 }

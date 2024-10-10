@@ -12,7 +12,7 @@ export function AudioCodePlayer(props: { colors: string[] }) {
   const { t } = useTranslation();
 
   const createAudioFile = debounce(() => {
-    const buffer = new Blob([generateAudioFile(colors ?? [])]);
+    const buffer = new Blob([generateAudioFile(colors ?? [], { bitDepth: '16' })]);
     setAudioFile(URL.createObjectURL(buffer));
     return buffer;
   }, 100);
@@ -30,14 +30,13 @@ export function AudioCodePlayer(props: { colors: string[] }) {
     if (!player) return;
     console.log('PLAY!!!');
     player.currentTime = 0;
+    player.volume = 0.5;
     await player.play();
-    player.volume = 1;
   };
 
   const stopAudio = () => {
     const player = playerRef.current;
     if (!player) return;
-    player.currentTime = 0;
     player.pause();
   };
 

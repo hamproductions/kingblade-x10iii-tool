@@ -1,5 +1,5 @@
 import { Buffer } from 'buffer';
-import { range, round, sum } from 'lodash-es';
+import { round, sum } from 'lodash-es';
 import { WaveFile } from 'wavefile';
 import { fromHexString, type ByteArray, type RGB } from './utils';
 import {
@@ -36,7 +36,11 @@ const colors_to_packets = (colors: ByteArray[], no_normalization = false, previe
   return packets;
 };
 
-export const generate_wave = (packets: ByteArray[], invert = false) => {
+export const generate_wave = (
+  packets: ByteArray[],
+  invert = false,
+  bitDepth: '8' | '16' | '32' = '32'
+) => {
   const samples: number[][] = [[], []];
 
   const wf = {
@@ -51,9 +55,7 @@ export const generate_wave = (packets: ByteArray[], invert = false) => {
     }
   };
 
-  range(10).forEach(() => {
-    write_pause(wf);
-  });
+  write_pause(wf);
   write_preamble(wf, invert);
 
   packets.map((packet) => {
@@ -63,16 +65,26 @@ export const generate_wave = (packets: ByteArray[], invert = false) => {
   });
 
   const res = new WaveFile();
+  const bitRate = new AudioContext().sampleRate;
   res.fromScratch(2, 48000, '16', samples);
+  res.toBitDepth(bitDepth);
+  res.toSampleRate(bitRate);
+
   return res.toBuffer();
 };
 
-export const generateAudioFile = (colors: string[], preview = false) => {
+export const generateAudioFile = (
+  colors: string[],
+  options: { preview?: boolean; bitDepth?: '8' | '16' | '32' } = { preview: false }
+) => {
+  const { preview, bitDepth } = options;
   return generate_wave(
     colors_to_packets(
       colors.map((c) => fromHexString(c)),
       false,
       preview
-    )
+    ),
+    false,
+    bitDepth
   );
 };

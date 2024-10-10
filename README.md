@@ -1,4 +1,3 @@
-# Seiyuu Shirt Generator
+# Kingblade x10iii Tuning Tool
 
-based on [@luseo29's design](https://x.com/luseo29/status/1799676661627252779)
-
+Algorithm ported from [kbx3wave](https://github.com/kjy00302/kbx3wave)
