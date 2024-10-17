@@ -58,7 +58,7 @@ export function AudioCodePlayer(props: { colors: string[] }) {
               {t('install_to_kingblade')}
             </Button>
             <Button
-              variant="ghost"
+              variant="subtle"
               onClick={() => {
                 stopAudio();
               }}

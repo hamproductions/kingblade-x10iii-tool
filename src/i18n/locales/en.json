@@ -26,9 +26,35 @@
   "white": "white",
   "preview_color": "Preview color",
   "edit_color": {
-    "save": "save",
+    "save": "Save",
     "title": "Edit",
     "description": "Edit color"
   },
-  "not_implemented": "Not Implemented"
+  "not_implemented": "Not Implemented",
+  "create_preset_dialog": {
+    "title": "Create Preset",
+    "description": "Choose a present name.",
+    "save": "Save"
+  },
+  "create_preset": "Create Preset",
+  "load_preset": "Load Preset",
+  "delete_preset": "Delete Preset",
+  "show_qr_code": "Show QR Code",
+  "select_preset": "Select Preset",
+  "select_a_preset": "Select a Preset",
+  "default": "Default List",
+  "defaultTitlePrefix": "Kingblade Tool",
+  "qr_viewer": {
+    "title": "Qr Code",
+    "description": "Scan with other device or with Kingblade-compatible app"
+  },
+  "error_page": {
+    "title": "Oopsie",
+    "text": "Sometimes refreshing the page fix it, Clearing the data might also fix it too. If it doesn't ping ",
+    "discord_link": "@hamp on Discord",
+    "to_fix_it": " to fix it.",
+    "copy": "Copy Error Message",
+    "reload": "Reload Page",
+    "clear": "Clear Data and Reload Page"
+  }
 }

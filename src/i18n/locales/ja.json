@@ -30,5 +30,31 @@
     "title": "編集",
     "description": "色を編集する"
   },
-  "not_implemented": "未実装"
+  "not_implemented": "未実装",
+  "create_preset_dialog": {
+    "title": "リストを作る",
+    "description": "リスト名を入力してください",
+    "save": "保存"
+  },
+  "create_preset": "リストを作成",
+  "load_preset": "リストを適用",
+  "delete_preset": "リストを削除",
+  "show_qr_code": "QRコードを表示",
+  "select_preset": "リストを選択",
+  "select_a_preset": "リストを選択していください",
+  "default": "初期リスト",
+  "defaultTitlePrefix": "Kingblade ツール",
+  "qr_viewer": {
+    "title": "QRコード",
+    "description": "Kingblade用QRコードのアプリでスキャンしてください"
+  },
+  "error_page": {
+    "title": "あっちゃー",
+    "text": "ページを再読み込みすると大体直りましたし、データをクリアして再読み込みするのもたまに治せます。 直さない場合は",
+    "discord_link": "Discordで@hamp",
+    "to_fix_it": "に連絡してください。",
+    "copy": "エラーメッセージをコピー",
+    "reload": "再読み込み",
+    "clear": "データをクリアして際読み込み"
+  }
 }

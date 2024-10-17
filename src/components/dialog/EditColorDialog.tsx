@@ -37,7 +37,6 @@ export function EditColorDialog(
   const createAudioFile = debounce(() => {
     const buffer = new Blob([generateAudioFile([tmpColor], { preview: true })]);
     setPreviewAudio(URL.createObjectURL(buffer));
-    console.log('NEW FILE!');
   }, 100);
 
   useEffect(() => {
@@ -75,7 +74,7 @@ export function EditColorDialog(
               <Stack gap="1">
                 <Dialog.Title>{t(`edit_color.title`)}</Dialog.Title>
                 <Dialog.Description>{t(`edit_color.description`)}</Dialog.Description>
-                <Input value={color} onChange={(e) => setTmpColor(e.target.value)} />
+                <Input value={tmpColor} onChange={(e) => setTmpColor(e.target.value)} />
                 <Box
                   style={{ backgroundColor: colorsToHex(tmpColor) }}
                   aspectRatio="1"
