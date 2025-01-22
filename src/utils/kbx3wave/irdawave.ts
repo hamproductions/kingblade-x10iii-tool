@@ -10,13 +10,10 @@ type WaveWrite = {
 };
 
 function _write_bit(wf: WaveWrite, b: boolean, invert = false) {
-  range(8).forEach(() => {
-    wf.writeframesraw(invert ? FRAME_HIGH_16BIT : FRAME_LOW_16BIT);
-  });
-  range(6).forEach(() => {
+  range(4).forEach(() => {
     wf.writeframesraw(b !== invert ? FRAME_LOW_16BIT : FRAME_HIGH_16BIT);
   });
-  range(6).forEach(() => {
+  range(16).forEach(() => {
     wf.writeframesraw(invert ? FRAME_HIGH_16BIT : FRAME_LOW_16BIT);
   });
 }
