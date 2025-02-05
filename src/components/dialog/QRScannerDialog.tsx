@@ -2,11 +2,11 @@ import type { DialogRootProps } from '@ark-ui/react';
 import { Scanner } from '@yudiel/react-qr-scanner';
 import { t } from 'i18next';
 import { FaXmark } from 'react-icons/fa6';
-import { Dialog } from '../ui/dialog';
-import { Button } from '../ui/button';
-import { IconButton } from '../ui/icon-button';
 import { css } from 'styled-system/css';
-import { Stack, Box } from 'styled-system/jsx';
+import { Box, Stack } from 'styled-system/jsx';
+import { Button } from '../ui/button';
+import { Dialog } from '../ui/dialog';
+import { IconButton } from '../ui/icon-button';
 
 export function QRScannerDialog(
   props: DialogRootProps & { onQrCodeScanned: (data: string) => void }
@@ -38,7 +38,7 @@ export function QRScannerDialog(
             <Stack gap="3" direction="row" width="full">
               <Dialog.CloseTrigger asChild>
                 <Button variant="outline" width="full">
-                  {t('dialog.close')}
+                  i{t('dialog.close')}
                 </Button>
               </Dialog.CloseTrigger>
             </Stack>

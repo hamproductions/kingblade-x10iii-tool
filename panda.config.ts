@@ -1,5 +1,7 @@
 import { defineConfig } from '@pandacss/dev';
 import { createPreset } from '@park-ui/panda-preset';
+import pink from '@park-ui/panda-preset/colors/mauve';
+import mauve from '@park-ui/panda-preset/colors/mauve';
 import { theme } from './src/theme';
 
 const config = defineConfig({
@@ -9,9 +11,9 @@ const config = defineConfig({
   presets: [
     '@pandacss/preset-base',
     createPreset({
-      accentColor: 'pink',
-      grayColor: 'mauve',
-      borderRadius: 'lg'
+      accentColor: pink,
+      grayColor: mauve,
+      radius: 'lg'
     })
   ],
 
