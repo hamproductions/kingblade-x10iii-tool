@@ -6,6 +6,7 @@ import { join, resolve } from 'path';
 import vike from 'vike/plugin';
 import { cjsInterop } from 'vite-plugin-cjs-interop';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import { nodePolyfills } from 'vite-plugin-node-polyfills';
 
 const ReactCompilerConfig = {
   // compilationMode: 'annotation'
@@ -36,14 +37,16 @@ export default defineConfig({
         plugins: [['babel-plugin-react-compiler', ReactCompilerConfig]]
       }
     }) as PluginOption,
-    vike({ prerender: true })
+    vike({ prerender: true }),
+    nodePolyfills({
+      include: ['buffer']
+    })
   ],
   base: process.env.PUBLIC_ENV__BASE_URL,
   resolve: {
     alias: {
       '~': new URL('./src/', import.meta.url).pathname
       // ['styled-system']: join(__dirname, './styled-system/'),
-      // 'three/addons': join(__dirname, '../../node_modules/three/examples/jsm/')
     }
   },
   build: {
