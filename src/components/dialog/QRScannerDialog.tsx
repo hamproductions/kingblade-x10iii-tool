@@ -2,11 +2,11 @@ import type { DialogRootProps } from '@ark-ui/react';
 import { Scanner } from '@yudiel/react-qr-scanner';
 import { t } from 'i18next';
 import { FaXmark } from 'react-icons/fa6';
-import { css } from 'styled-system/css';
-import { Box, Stack } from 'styled-system/jsx';
 import { Button } from '../ui/button';
 import { Dialog } from '../ui/dialog';
 import { IconButton } from '../ui/icon-button';
+import { Box, Stack } from 'styled-system/jsx';
+import { css } from 'styled-system/css';
 
 export function QRScannerDialog(
   props: DialogRootProps & { onQrCodeScanned: (data: string) => void }
